@@ -3,8 +3,48 @@
     src: url("./fonts/Norse-Bold.otf");
 }
 
+:root {
+    --left-width: 33vw;
+    overflow: hidden;
+}
+
 body {
     margin: 0;
+}
+
+.container {
+    display: flex;
+}
+
+.container-item-left {
+    flex: 1;
+    position: relative;
+}
+
+.container-item-right {
+    flex: 2;
+}
+
+.logo-container {
+    position: absolute;
+    top: 20vh;
+    width: var(--left-width);
+    background-color: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    position: absolute;
+    color: white;
+    bottom: 10px;
+    width: var(--left-width);
+    text-align: center;
+}
+
+.center {
+    
 }
 
 p {
@@ -13,17 +53,32 @@ p {
 
 h1 {
    background-color: greenyellow;
-   font-family: 'Norse Bold';
+
+}
+
+#logo {
+    font-family: 'Norse Bold';
+    font-size: 12vh;
+    color: white;
+    flex: 0 0 20%;
+    padding: 8px;
+    margin: 0;
 }
 
 img[src^="./img/halie"] {
     height: 100vh;
-    width: 30vw;
+    width: var(--left-width);
     object-fit: cover;
 }
 
 img[src^="./img/odin"] {
-    height: 80px;
+    height: 15vh;
     width: auto;
-    background-color: black;
+    padding: 8px;
+    margin: 0;
+    flex: 0 0 auto;
+}
+
+a:link, a:visited, a:hover, a:active {
+    color: white;
 }
