@@ -16,9 +16,14 @@ h1 {
    font-family: 'Norse Bold';
 }
 
-img {
-    margin: 0px;
+img[src^="./img/halie"] {
     height: 100vh;
     width: 30vw;
     object-fit: cover;
+}
+
+img[src^="./img/odin"] {
+    height: 80px;
+    width: auto;
+    background-color: black;
 }
