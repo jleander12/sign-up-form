@@ -39,7 +39,6 @@ body {
 
 .container-item-right > form {
     flex: 0;
-    margin-top: clamp(0.5rem, 4vh, 2rem);
 }
 
 form {
@@ -72,7 +71,7 @@ h6 {
     color:black;
     font-size: clamp(0.5rem, 4vh, 1.5rem);
     font-weight: 100;
-    margin: clamp(0.5rem, 4vh, 2rem) 12px 0px 12px;
+    margin:  8px 12px clamp(0.5rem, 4vh, 1.5rem) 12px;
     /* margin: 0px; */
 }
 
@@ -158,7 +157,7 @@ input:focus {
     box-shadow: 0px 4px 4px 0px #CCCCCC;
 }
 
-input.error {
+input.error, input:invalid {
     outline: none;
     border: 1px solid rgb(255, 0, 0);
     border-radius: 2px;
