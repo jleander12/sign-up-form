@@ -5,6 +5,8 @@
 
 :root {
     --left-width: 33vw;
+    --right-width: calc(100 - var(--left-width));
+    --fern-green: #596D48;
     overflow: hidden;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -20,10 +22,32 @@ body {
 .container-item-left {
     flex: 1;
     position: relative;
+    
 }
 
 .container-item-right {
     flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container-text {
+    flex: 0;
+    width: min(50vw, 700px);
+}
+
+.container-item-right > form {
+    flex: 0;
+    margin-top: clamp(0.5rem, 4vh, 2rem);
+}
+
+form {
+    width: var(--right-width);
+}
+
+.card {
+    box-shadow: 0 0 10px 0 #BBBBBB;
 }
 
 .logo-container {
@@ -46,16 +70,16 @@ footer {
 
 h6 {
     color:black;
-    font-size: clamp(1rem, 5vh, 2rem);
+    font-size: clamp(0.5rem, 4vh, 1.5rem);
     font-weight: 100;
-    padding: 16px 32px;
-    margin: 24px;
+    margin: clamp(0.5rem, 4vh, 2rem) 12px 0px 12px;
+    /* margin: 0px; */
 }
 
 p {
     color:black;
     font-size: clamp(.5rem, 3vh, 1rem);
-    padding: 16px 32px; 
+    margin: 0px 12px; 
 }
 
 #logo {
@@ -71,6 +95,8 @@ img[src^="./img/halie"] {
     height: 100vh;
     width: var(--left-width);
     object-fit: cover;
+    padding: 0px;
+    margin: 0px;
 }
 
 img[src^="./img/odin"] {
@@ -83,4 +109,57 @@ img[src^="./img/odin"] {
 
 a:link, a:visited, a:hover, a:active {
     color: white;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.input-header {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.input-group > label {
+    font-size: clamp(0.5rem, 3vh, 0.75rem);
+    margin-left: 12px;
+}
+
+.input-group > input {
+    font-size: clamp(.5rem, 4vh, 1rem);
+    padding: 2px;
+    margin-left: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #CCCCCC;
+    border-radius: 2px;
+
+}
+
+button {
+    padding: 12px 32px;
+    margin: 18px 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--fern-green);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+#log-in {
+    color: var(--fern-green);
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid rgb(0, 119, 255);
+    border-radius: 2px;
+    box-shadow: 0px 4px 4px 0px #CCCCCC;
+}
+
+input.error {
+    outline: none;
+    border: 1px solid rgb(255, 0, 0);
+    border-radius: 2px;
 }
